@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Rubik:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .container{
+        @apply max-w-screen-2xl mx-auto px-5 md:px-10
+    }
+}
+
+*{
+    font-family: 'Rubik', sans-serif !important;
+}
+.swiper-wrapper{
+    height: 100vh !important;
+}
+.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets{
+    right: 100px !important;
+}
+.swiper-pagination-bullet{
+    height: 13px !important;
+    width: 13px !important;
+    background: #fff !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active{
+    background: #FF7757 !important;
+}
+.headroom--scrolled{
+    z-index: 11111 !important;
+}
+
+
+.header-btn-prev,
+.header-btn-next{
+    position: static !important;
+    color: rgb(6 182 212) !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    content: none !important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    content: none !important;
+}
