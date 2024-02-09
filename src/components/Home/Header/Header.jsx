@@ -1,6 +1,6 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { TfiAngleDown } from "react-icons/tfi";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -25,6 +25,13 @@ const Header = () => {
     }
   ]
 
+  const data = [
+    'Destination',
+    "Person",
+    "Check In",
+    "Check Out"
+  ]
+
   return (
     <div className='max-w-[1920px]'>
       <Swiper
@@ -44,8 +51,29 @@ const Header = () => {
           slids.map(slide => <SwiperSlide key={slide.image}>
             <div className='w-full h-full overflow-hidden relative'>
               <img className='h-full w-full object-cover' src={slide.image} alt="" />
-              <div className='absolute left-0 top-0 bottom-0 my-auto flex flex-col justify-center'>
-                <h2>Start your unforgettable journey with us.</h2>
+              <div className='absolute left-0 top-0 bottom-0 right-0 bg-black/50'></div>
+              <div className='absolute left-0 top-0 bottom-0 my-auto flex flex-col justify-center max-w-screen-2xl mx-auto'>
+                <h2 className='!font-playfair text-white text-2xl md:text-7xl max-w-screen-lg pl-10'>Start your unforgettable journey with us.</h2>
+                <p className='text-white mt-5 text-lg pl-10'>The best travel for your jouney begins now</p>
+                <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 bg-white max-w-[80vw] rounded-r-2xl'>
+                  <div className='md:col-span-3 lg:col-span-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-10 gap-4'>
+                    {
+                      data?.map(item =>
+                        <div key={item} className='space-y-2'>
+                          <h5 className='uppercase text-blue-gray-500'>{item}</h5>
+                          <div className='flex items-center gap-2'>
+                            <input className='outline-none focus:outline-none border-b-2 border-b-black !font-playfair w-full' type="text" />
+                            <TfiAngleDown />
+                          </div>
+                        </div>
+                      )
+                    }
+
+                  </div>
+                  <div className='col-span-1 flex items-center justify-center bg-primary text-white cursor-pointer p-10 rounded-r-2xl'>
+                      <span className='!font-playfair'>Book Now</span>
+                  </div>
+                </div>
               </div>
             </div>
           </SwiperSlide>)

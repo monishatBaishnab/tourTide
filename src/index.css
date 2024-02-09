@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 @layer components{
-    .container{
+    .container{ 
         @apply max-w-screen-2xl mx-auto px-5 md:px-10
     }
 }
